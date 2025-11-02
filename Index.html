@@ -14,58 +14,15 @@
         <img src="image/logo.svg" class="logo" alt="">
         <div>
             <ul id="navbar">
-                <li><a class="active">Home<script>
-// -----------------------
-// DISPLAY CART ITEMS
-// -----------------------
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-const cartBody = document.getElementById("cart-items");
-
-function loadCart() {
-    if (cart.length === 0) {
-        cartBody.innerHTML = "<tr><td colspan='6'>Cart is empty.</td></tr>";
-        return;
-    }
-
-    cartBody.innerHTML = "";
-
-    cart.forEach((item, index) => {
-        cartBody.innerHTML += `
-            <tr>
-                <td><a href="#" onclick="removeItem(${index})"><i class="far fa-times-circle"></i></a></td>
-                <td><img src="${item.thumbnail}" alt=""></td>
-                <td>${item.title}</td>
-                <td>$${item.price}</td>
-                <td>1</td>
-                <td>$${item.price}</td>
-            </tr>
-        `;
-    });
-}
-
-loadCart();
-
-// -----------------------
-// REMOVE SINGLE ITEM
-// -----------------------
-function removeItem(index) {
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    loadCart();
-    updateCartDisplay();
-}
-</script></a></li>
+                <li><a class="active">Home</a></li>
                 <li><a href="">Shop</a></li>
                  <li><a href="">About</a></li>
                 <li><a href="">Product</a></li>
-                 <li id="lg-bag"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                 <a href="#" id="close"><i class="fa fa-times"></i></a>
+                 <li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
+                 
             </ul>
         </div>
-        <div id="Mobile"> 
-      <a href=""><i  class="fa fa-shopping-cart"></i></a>
-          <i id="bar" class="fas fa-outdent"></i>
-        </div>
+        
     </section>
     <section id="hero">
         <h4>Trade-in-offer</h4>
